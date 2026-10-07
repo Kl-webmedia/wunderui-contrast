@@ -1,5 +1,5 @@
 {
-  "name": "@wunderui/contrast",
+  "name": "wunderui-contrast",
   "version": "0.1.0",
   "description": "WCAG contrast audit for design tokens and Tailwind component variants — light and dark, rest and hover, oklch and translucent fills. Zero-config for shadcn/ui.",
   "keywords": [

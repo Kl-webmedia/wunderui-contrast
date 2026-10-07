@@ -1,7 +1,7 @@
 /**
  * The WunderUI design system's own audit (https://wunderui.com).
  * Run from the WunderUI repository root:
- *   npx @wunderui/contrast --config contrast.config.mjs
+ *   npx wunderui-contrast --config contrast.config.mjs
  *
  * Shows what a config can do beyond the defaults: an ink x surface matrix,
  * tint pairs, and a badge matrix built with plain loops — the config is a

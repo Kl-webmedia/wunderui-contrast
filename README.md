@@ -3,7 +3,7 @@
 **A WCAG contrast audit for design tokens and Tailwind component variants.** Light and dark, at rest and on hover, with oklch colours and translucent fills, resolved the way the browser resolves them.
 
 ```bash
-npx @wunderui/contrast
+npx wunderui-contrast
 ```
 
 Run it in a shadcn/ui project and it works without a config. It reads your `globals.css` and your `button.tsx` / `badge.tsx` variant maps, then checks every pair your components actually paint:
@@ -100,7 +100,7 @@ The report lands in the job summary.
 ## API
 
 ```js
-import { loadConfig, runAudit, toMarkdown } from "@wunderui/contrast"
+import { loadConfig, runAudit, toMarkdown } from "wunderui-contrast"
 
 const { config } = await loadConfig(process.cwd())
 const result = runAudit(config)
