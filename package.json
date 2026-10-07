@@ -1,0 +1,51 @@
+{
+  "name": "@wunderui/contrast",
+  "version": "0.1.0",
+  "description": "WCAG contrast audit for design tokens and Tailwind component variants — light and dark, rest and hover, oklch and translucent fills. Zero-config for shadcn/ui.",
+  "keywords": [
+    "wcag",
+    "contrast",
+    "accessibility",
+    "a11y",
+    "design-tokens",
+    "tailwindcss",
+    "shadcn",
+    "oklch",
+    "cva",
+    "design-system",
+    "ci"
+  ],
+  "homepage": "https://wunderui.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kl-webmedia/wunderui-contrast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kl-webmedia/wunderui-contrast/issues"
+  },
+  "author": "WunderUI",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "wunderui-contrast": "bin/wunderui-contrast.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "test": "node --test test/contrast.test.mjs"
+  }
+}

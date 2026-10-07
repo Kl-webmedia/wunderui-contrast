@@ -1,0 +1,27 @@
+name: WunderUI Contrast
+description: WCAG contrast audit for design tokens and Tailwind component variants (light, dark, hover). Zero-config for shadcn/ui.
+author: WunderUI
+branding:
+  icon: eye
+  color: purple
+inputs:
+  args:
+    description: Extra options, e.g. "--css src/app.css --fail-on warn"
+    required: false
+    default: ""
+  working-directory:
+    description: Project root
+    required: false
+    default: "."
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        set +e
+        node "${{ github.action_path }}/bin/wunderui-contrast.mjs" --md ${{ inputs.args }} > "$RUNNER_TEMP/contrast.md"
+        code=$?
+        cat "$RUNNER_TEMP/contrast.md" >> "$GITHUB_STEP_SUMMARY"
+        cat "$RUNNER_TEMP/contrast.md"
+        exit $code
