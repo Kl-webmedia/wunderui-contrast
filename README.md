@@ -115,4 +115,4 @@ console.log(toMarkdown(result))
 
 ## Licence
 
-MIT. Built for and used by [WunderUI](https://wunderui.com), the design system with a matching React library and Figma file.
+MIT. Built for and used by [WunderUI](https://wunderui.com), the design system with a matching React library and Figma file. More from WunderUI: [76 free components](https://github.com/wunder-ui/wunderui) (`npx wunderui-cli add button`) and the [MCP server](https://github.com/Kl-webmedia/wunderui-mcp) for coding agents.

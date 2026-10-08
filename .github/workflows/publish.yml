@@ -13,17 +13,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org
+          node-version: 24
       - run: npm test
-      - name: Publish (errors are written to the run summary)
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.WUNDERUICONTRAST || secrets.NPM_TOKEN }}
+      - name: Publish with npm Trusted Publishing (no token; provenance is automatic)
         run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "::error::No NPM_TOKEN or WUNDERUICONTRAST secret in this repository"; exit 1; fi
-          echo "npm user: $(npm whoami 2>&1 | tail -1)"
+          npm install -g npm@latest
           set +e
-          npm publish --provenance --access public > publish.log 2>&1
+          npm publish --access public > publish.log 2>&1
           code=$?
           cat publish.log
           if [ $code -ne 0 ]; then grep -E "npm error|ERR" publish.log | head -8 | while read -r l; do echo "::error::$l"; done; exit $code; fi
